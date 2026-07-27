@@ -2,25 +2,12 @@
 
 ## Dados Utilizados
 
-Descreva se usou os arquivos da pasta `data`, por exemplo:
-
-| Arquivo | Formato | Utilização no Agente |
+| Arquivo | Formato | Função |
 |---------|---------|---------------------|
-| `historico_atendimento.csv` | CSV | Contextualizar interações anteriores |
-| `perfil_investidor.json` | JSON | Personalizar recomendações |
-| `produtos_financeiros.json` | JSON | Sugerir produtos adequados ao perfil |
-| `transacoes.csv` | CSV | Analisar padrão de gastos do cliente |
-
-> [!TIP]
-> **Quer um dataset mais robusto?** Você pode utilizar datasets públicos do [Hugging Face](https://huggingface.co/datasets) relacionados a finanças, desde que sejam adequados ao contexto do desafio.
-
----
-
-## Adaptações nos Dados
-
-> Você modificou ou expandiu os dados mockados? Descreva aqui.
-
-[Sua descrição aqui]
+| `historico_atendimento.csv` | CSV | Contextualizar interações anteriores para ter continuidade nas conversas |
+| `perfil_investidor.json` | JSON | Personalizar as explicações para dúvidas do usuário |
+| `produtos_financeiros.json` | JSON | Apresentar diferentes produtos financeiros e explicar quando são utilizados e/ou recomendados |
+| `transacoes.csv` | CSV | Analisar padrão de gastos do cliente para personalizar as consultas didaticamente |
 
 ---
 
@@ -29,12 +16,12 @@ Descreva se usou os arquivos da pasta `data`, por exemplo:
 ### Como os dados são carregados?
 > Descreva como seu agente acessa a base de conhecimento.
 
-[ex: Os JSON/CSV são carregados no início da sessão e incluídos no contexto do prompt]
+Os JSON/CSV são carregados no início da sessão e incluídos no contexto do prompt
 
 ### Como os dados são usados no prompt?
 > Os dados vão no system prompt? São consultados dinamicamente?
 
-[Sua descrição aqui]
+Para tornar a solução mais simples, os dados são "injetados" no prompt. Dessa forma, o Agente terá todo o contexto disponibilizado.
 
 ---
 
@@ -42,14 +29,30 @@ Descreva se usou os arquivos da pasta `data`, por exemplo:
 
 > Mostre um exemplo de como os dados são formatados para o agente.
 
+O exemplo a seguir mostra alguns dos dados mais relevantes para a construção do contexto do cliente baseado na base de dados disponibilizados, como uma forma de economizar tokens sem prejudicar a capacidade do Agente.
 ```
 Dados do Cliente:
 - Nome: João Silva
-- Perfil: Moderado
-- Saldo disponível: R$ 5.000
+- Profissão: Analista de Sistemas
+- Renda Mensal": 5000.00
+- Perfil investidor: Moderado
+- Patrimonio total": 15000.00
 
 Últimas transações:
-- 01/11: Supermercado - R$ 450
-- 03/11: Streaming - R$ 55
-...
+- 2025-10-01,Salário,receita,5000.00,entrada
+- 2025-10-02,Aluguel,moradia,1200.00,saida
+- 2025-10-03,Supermercado,alimentacao,450.00,saida
+- 2025-10-05,Netflix,lazer,55.90,saida
+- 2025-10-07,Farmácia,saude,89.00,saida
+- 2025-10-10,Restaurante,alimentacao,120.00,saida
+- 2025-10-12,Uber,transporte,45.00,saida
+- 2025-10-15,Conta de Luz,moradia,180.00,saida
+- 2025-10-20,Academia,saude,99.00,saida
+- 2025-10-25,Combustível,transporte,250.00,saida
+
+Produtos Disponíveis:
+- Tesouro Selic (risco baixo)
+- CDB Liquidez Diária (risco baixo)
+- LCI/LCA (risco baixo)
+- Fundo Multimercado (risco médio)
 ```
