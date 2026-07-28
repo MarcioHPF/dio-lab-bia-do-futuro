@@ -21,8 +21,17 @@ Os JSON/CSV são carregados no início da sessão e incluídos no contexto do pr
 ### Como os dados são usados no prompt?
 > Os dados vão no system prompt? São consultados dinamicamente?
 
-Para tornar a solução mais simples, os dados são "injetados" no prompt. Dessa forma, o Agente terá todo o contexto disponibilizado.
+Para tornar a solução mais simples, os dados são "injetados" no prompt. Dessa forma, o Agente terá todo o contexto disponibilizado. O código fica da seguinte maneira para a "injeção":
 
+```python
+import json
+import pandas as pd
+
+perfil = json.load(open('./data/perfil_investidor.json'))
+transacoes = pd.read_csv('./data/transacoes.csv')
+historico = pd.read_csv('./data/historico_atendimento.csv')
+produtos = json.load(open('./data/historico_atendimento.json'))
+```
 ---
 
 ## Exemplo de Contexto Montado
