@@ -1,149 +1,273 @@
-# 🤖 Agente Financeiro Inteligente com IA Generativa
+<div align="center">
 
-## Contexto
+# 💰 Aurum
+### Educador Financeiro Inteligente
 
-Os assistentes virtuais no setor financeiro estão evoluindo de simples chatbots reativos para **agentes inteligentes e proativos**. Neste desafio, você vai idealizar e prototipar um agente financeiro que utiliza IA Generativa para:
+Projeto desenvolvido como parte do **Bootcamp da DIO**, com o objetivo de construir um agente de IA capaz de auxiliar usuários na compreensão de conceitos financeiros e na organização de suas finanças de forma simples, didática e responsável.
 
-- **Antecipar necessidades** ao invés de apenas responder perguntas
-- **Personalizar** sugestões com base no contexto de cada cliente
-- **Cocriar soluções** financeiras de forma consultiva
-- **Garantir segurança** e confiabilidade nas respostas (anti-alucinação)
-
-> [!TIP]
-> Na pasta [`examples/`](./examples/) você encontra referências de implementação para cada etapa deste desafio.
+</div>
 
 ---
 
-## O Que Você Deve Entregar
+# 📖 Sobre o Projeto
 
-### 1. Documentação do Agente
+O **Aurum** é um agente de Inteligência Artificial voltado para **educação financeira**.
 
-Defina **o que** seu agente faz e **como** ele funciona:
+Seu propósito é ajudar pessoas que possuem pouco conhecimento sobre finanças a entender conceitos do mercado financeiro, esclarecer dúvidas e auxiliar na organização de gastos utilizando apenas as informações disponibilizadas pelo usuário e pela base de conhecimento do projeto.
 
-- **Caso de Uso:** Qual problema financeiro ele resolve? (ex: consultoria de investimentos, planejamento de metas, alertas de gastos)
-- **Persona e Tom de Voz:** Como o agente se comporta e se comunica?
-- **Arquitetura:** Fluxo de dados e integração com a base de conhecimento
-- **Segurança:** Como evitar alucinações e garantir respostas confiáveis?
-
-📄 **Template:** [`docs/01-documentacao-agente.md`](./docs/01-documentacao-agente.md)
+O agente foi desenvolvido para atuar como um **educador financeiro**, e não como um consultor ou recomendador de investimentos.
 
 ---
 
-### 2. Base de Conhecimento
+# 🎯 Problema
 
-Utilize os **dados mockados** disponíveis na pasta [`data/`](./data/) para alimentar seu agente:
+Grande parte da população ainda possui pouco acesso à educação financeira.
 
-| Arquivo | Formato | Descrição |
-|---------|---------|-----------|
-| `transacoes.csv` | CSV | Histórico de transações do cliente |
-| `historico_atendimento.csv` | CSV | Histórico de atendimentos anteriores |
-| `perfil_investidor.json` | JSON | Perfil e preferências do cliente |
-| `produtos_financeiros.json` | JSON | Produtos e serviços disponíveis |
-
-Você pode adaptar ou expandir esses dados conforme seu caso de uso.
-
-📄 **Template:** [`docs/02-base-conhecimento.md`](./docs/02-base-conhecimento.md)
+Isso faz com que muitas pessoas tenham dificuldades para compreender conceitos importantes, como termos técnicos, investimentos e organização financeira, o que pode dificultar o planejamento das próprias finanças.
 
 ---
 
-### 3. Prompts do Agente
+# 💡 Solução
 
-Documente os prompts que definem o comportamento do seu agente:
+O Aurum oferece uma abordagem educativa para esse problema.
 
-- **System Prompt:** Instruções gerais de comportamento e restrições
-- **Exemplos de Interação:** Cenários de uso com entrada e saída esperada
-- **Tratamento de Edge Cases:** Como o agente lida com situações limite
+Ele responde dúvidas sobre finanças utilizando uma linguagem simples e compreensível, além de auxiliar o usuário na organização de seus gastos com base nas informações que ele decidir compartilhar.
 
-📄 **Template:** [`docs/03-prompts.md`](./docs/03-prompts.md)
+Toda a interação é realizada respeitando os limites definidos para o agente, evitando recomendações financeiras específicas e utilizando apenas os dados disponíveis no contexto.
 
 ---
 
-### 4. Aplicação Funcional
+# 👥 Público-Alvo
 
-Desenvolva um **protótipo funcional** do seu agente:
+O projeto foi pensado para pessoas que:
 
-- Chatbot interativo (sugestão: Streamlit, Gradio ou similar)
-- Integração com LLM (via API ou modelo local)
-- Conexão com a base de conhecimento
-
-📁 **Pasta:** [`src/`](./src/)
-
----
-
-### 5. Avaliação e Métricas
-
-Descreva como você avalia a qualidade do seu agente:
-
-**Métricas Sugeridas:**
-- Precisão/assertividade das respostas
-- Taxa de respostas seguras (sem alucinações)
-- Coerência com o perfil do cliente
-
-📄 **Template:** [`docs/04-metricas.md`](./docs/04-metricas.md)
+- possuem pouco conhecimento sobre educação financeira;
+- estão iniciando seus estudos sobre finanças;
+- precisam de ajuda para compreender conceitos financeiros;
+- desejam organizar melhor seus gastos.
 
 ---
 
-### 6. Pitch
+# 🤖 Persona do Agente
 
-Grave um **pitch de 3 minutos** (estilo elevador) apresentando:
+**Nome:** Aurum (Educador Financeiro)
 
-- Qual problema seu agente resolve?
-- Como ele funciona na prática?
-- Por que essa solução é inovadora?
+### Personalidade
 
-📄 **Template:** [`docs/05-pitch.md`](./docs/05-pitch.md)
+- Educativo
+- Paciente
+- Gentil
+- Ensina utilizando exemplos práticos
+- Não julga dúvidas nem gastos do usuário
+
+### Tom de Comunicação
+
+- Informal
+- Didático
+- Acessível
+- Conversacional
+
+### Exemplos de interação
+
+**Saudação**
+
+> Olá! Eu sou o Aurum, seu educador financeiro. Como posso te ajudar hoje?
+
+**Confirmação**
+
+> Tranquilo! Vou verificar isso pra você agora mesmo!
+
+**Limitação**
+
+> Infelizmente não vou ter como te ajudar nessa questão, será que posso te ajudar em outra questão?
 
 ---
 
-## Ferramentas Sugeridas
+# ✨ Funcionalidades
 
-Todas as ferramentas abaixo possuem versões gratuitas:
-
-| Categoria | Ferramentas |
-|-----------|-------------|
-| **LLMs** | [ChatGPT](https://chat.openai.com/), [Copilot](https://copilot.microsoft.com/), [Gemini](https://gemini.google.com/), [Claude](https://claude.ai/), [Ollama](https://ollama.ai/) |
-| **Desenvolvimento** | [Streamlit](https://streamlit.io/), [Gradio](https://www.gradio.app/), [Google Colab](https://colab.research.google.com/) |
-| **Orquestração** | [LangChain](https://www.langchain.com/), [LangFlow](https://www.langflow.org/), [CrewAI](https://www.crewai.com/) |
-| **Diagramas** | [Mermaid](https://mermaid.js.org/), [Draw.io](https://app.diagrams.net/), [Excalidraw](https://excalidraw.com/) |
+- Explicação de conceitos financeiros.
+- Esclarecimento de dúvidas sobre educação financeira.
+- Auxílio na organização de gastos.
+- Utilização de dados fornecidos pelo usuário durante a conversa.
+- Respostas educativas com linguagem simples.
 
 ---
 
-## Estrutura do Repositório
+# 🛠 Tecnologias Utilizadas
 
+| Tecnologia | Finalidade |
+|------------|------------|
+| Python | Desenvolvimento da aplicação |
+| Streamlit | Interface do agente |
+| Ollama | Execução local do modelo de linguagem |
+| Pandas | Manipulação dos dados CSV |
+| JSON | Armazenamento de dados estruturados |
+| CSV | Base de dados simulada |
+
+---
+
+# 🏗 Arquitetura
+
+```mermaid
+flowchart LR
+
+A[👤 Usuário]
+
+B[🖥 Streamlit]
+
+C[🧠 Ollama]
+
+D[📚 Base de Conhecimento]
+
+E[✔ Validação]
+
+F[💬 Resposta]
+
+A --> B
+
+B --> C
+
+C --> D
+
+D --> C
+
+C --> E
+
+E --> F
+
+F --> A
 ```
-📁 lab-agente-financeiro/
+
+---
+
+# 📂 Estrutura do Projeto
+
+```text
+dio-lab-bia-do-futuro
 │
-├── 📄 README.md
+├── assets/
+│   ├── README.md
+│   └── RoteiroLab.md
 │
-├── 📁 data/                          # Dados mockados para o agente
-│   ├── historico_atendimento.csv     # Histórico de atendimentos (CSV)
-│   ├── perfil_investidor.json        # Perfil do cliente (JSON)
-│   ├── produtos_financeiros.json     # Produtos disponíveis (JSON)
-│   └── transacoes.csv                # Histórico de transações (CSV)
+├── data/
+│   ├── historico_atendimento.csv
+│   ├── perfil_investidor.json
+│   ├── produtos_financeiros.json
+│   └── transacoes.csv
 │
-├── 📁 docs/                          # Documentação do projeto
-│   ├── 01-documentacao-agente.md     # Caso de uso e arquitetura
-│   ├── 02-base-conhecimento.md       # Estratégia de dados
-│   ├── 03-prompts.md                 # Engenharia de prompts
-│   ├── 04-metricas.md                # Avaliação e métricas
-│   └── 05-pitch.md                   # Roteiro do pitch
+├── docs/
+│   ├── 01-documentacao-agente.md
+│   ├── 02-base-conhecimento.md
+│   ├── 03-prompts.md
+│   ├── 04-metricas.md
+│   └── 05-pitch.md
 │
-├── 📁 src/                           # Código da aplicação
-│   └── app.py                        # (exemplo de estrutura)
+├── examples/
+│   └── README.md
 │
-├── 📁 assets/                        # Imagens e diagramas
-│   └── ...
+├── src/
+│   ├── README.md
+│   └── Aurum/
+│       ├── data/
+│       └── src/
+│           └── app.py
 │
-└── 📁 examples/                      # Referências e exemplos
-    └── README.md
+└── README.md
 ```
 
 ---
 
-## Dicas Finais
+# 📚 Base de Conhecimento
 
-1. **Comece pelo prompt:** Um bom system prompt é a base de um agente eficaz
-2. **Use os dados mockados:** Eles garantem consistência e evitam problemas com dados sensíveis
-3. **Foque na segurança:** No setor financeiro, evitar alucinações é crítico
-4. **Teste cenários reais:** Simule perguntas que um cliente faria de verdade
-5. **Seja direto no pitch:** 3 minutos passam rápido, vá ao ponto
+O agente utiliza uma base de conhecimento composta por arquivos JSON e CSV presentes na pasta `data`.
+
+Esses arquivos representam informações simuladas utilizadas para fornecer contexto durante a conversa.
+
+Entre eles estão:
+
+- Perfil do investidor;
+- Histórico de atendimentos;
+- Transações financeiras;
+- Produtos financeiros.
+
+---
+
+# ⚙ Funcionamento
+
+O fluxo da aplicação é composto pelas seguintes etapas:
+
+1. Carregamento dos arquivos JSON e CSV.
+2. Construção do contexto contendo informações do usuário e dos dados disponíveis.
+3. Envio do contexto juntamente com o prompt de sistema para o modelo executado pelo Ollama.
+4. Geração da resposta.
+5. Exibição da resposta através da interface Streamlit.
+
+---
+
+# 🧠 Prompt do Sistema
+
+O Aurum recebe um prompt de sistema que define seu comportamento.
+
+Entre as principais regras estabelecidas estão:
+
+- responder apenas sobre assuntos relacionados a finanças;
+- utilizar linguagem simples;
+- basear-se apenas nos dados disponíveis;
+- não inventar informações;
+- admitir quando não souber responder;
+- não recomendar investimentos;
+- não acessar dados bancários sensíveis;
+- fornecer exemplos sempre que possível.
+
+---
+
+# 🔒 Segurança e Prevenção de Alucinações
+
+O projeto define explicitamente as seguintes estratégias:
+
+- Utilizar apenas os dados fornecidos no contexto e na base de conhecimento.
+- Não recomendar investimentos específicos.
+- Admitir quando não possuir conhecimento suficiente.
+- Não criar dados inexistentes.
+- Priorizar educação financeira em vez de aconselhamento financeiro.
+
+---
+
+# 🚫 Limitações
+
+O Aurum não foi desenvolvido para:
+
+- recomendar investimentos;
+- acessar dados bancários sensíveis;
+- criar informações inexistentes;
+- responder perguntas fora do contexto de educação financeira.
+
+---
+
+# 📄 Documentação
+
+A documentação do projeto está organizada na pasta `docs`:
+
+| Documento | Conteúdo |
+|-----------|----------|
+| 01-documentacao-agente.md | Caso de uso, persona, arquitetura e segurança |
+| 02-base-conhecimento.md | Estrutura da base de conhecimento |
+| 03-prompts.md | Prompts utilizados pelo agente |
+| 04-metricas.md | Métricas de avaliação |
+| 05-pitch.md | Material utilizado para apresentação do projeto |
+
+---
+
+# 👨‍💻 Autor
+
+**Márcio Henrique**
+
+Projeto desenvolvido durante o Bootcamp da **Digital Innovation One (DIO)** como prática na construção de agentes de Inteligência Artificial voltados para educação financeira.
+
+---
+
+<div align="center">
+
+**Aurum — Educação financeira acessível através da Inteligência Artificial.**
+
+</div>
