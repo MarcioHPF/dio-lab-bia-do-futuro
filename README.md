@@ -21,9 +21,18 @@ O agente foi desenvolvido para atuar como um **educador financeiro**, e não com
 
 # 🎯 Problema
 
-Grande parte da população ainda possui pouco acesso à educação financeira.
+A educação financeira ainda é um tema pouco difundido entre grande parte da população.
 
-Isso faz com que muitas pessoas tenham dificuldades para compreender conceitos importantes, como termos técnicos, investimentos e organização financeira, o que pode dificultar o planejamento das próprias finanças.
+Muitas pessoas possuem dúvidas sobre assuntos como:
+
+- 💰 Juros compostos
+- 📈 Investimentos
+- 📉 Inflação
+- 🏦 Renda fixa
+- 💳 Organização financeira
+- 📊 Planejamento de gastos
+
+Além disso, a falta de conhecimento dificulta a tomada de decisões financeiras conscientes.
 
 ---
 
