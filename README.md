@@ -156,7 +156,6 @@ dio-lab-bia-do-futuro
 │
 ├── assets/
 │   ├── README.md
-│   └── RoteiroLab.md
 │
 ├── data/
 │   ├── historico_atendimento.csv
